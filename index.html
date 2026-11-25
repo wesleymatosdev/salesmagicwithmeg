@@ -86,7 +86,7 @@
   .moon-layer{position:fixed;inset:0;z-index:-1;pointer-events:none}
   .moon-layer canvas{
     position:absolute;left:0;top:0;
-    filter:drop-shadow(0 0 18px rgba(236,231,214,0.25));
+    filter:drop-shadow(0 0 18px rgba(168,85,247,0.4));
   }
   @keyframes twinkle{0%,100%{opacity:.15}50%{opacity:.85}}
   .menu-toggle{display:none}
@@ -555,6 +555,8 @@
     ctx.arc(r, r, r, 0, 2 * Math.PI);
     ctx.clip();
     ctx.drawImage(moonImg, 256, 0, 512, 512, 0, 0, size, size); // near-side crop
+    ctx.fillStyle = 'rgba(168, 85, 247, 0.28)'; // brand purple tint over the lit surface
+    ctx.fillRect(0, 0, size, size);
     const sh = ctx.createRadialGradient(r * 0.8, r * 0.8, r * 0.2, r, r, r);
     sh.addColorStop(0, 'rgba(18,4,31,0)');
     sh.addColorStop(0.75, 'rgba(18,4,31,0.08)');
@@ -575,7 +577,7 @@
       ctx.ellipse(r, r, Math.abs(e), r, 0, Math.PI / 2, -Math.PI / 2, viaRight);
       ctx.closePath();
       ctx.filter = 'blur(' + Math.max(1, size * 0.012) + 'px)';
-      ctx.fillStyle = 'rgba(13, 6, 25, 0.94)';
+      ctx.fillStyle = 'rgba(24, 8, 40, 0.94)';
       ctx.fill();
       ctx.filter = 'none';
     }
