@@ -91,6 +91,12 @@
     opacity:0;
     animation:moonalive var(--dur) ease-in-out var(--delay) infinite;
   }
+  #starField,#starTwinkle{
+    position:absolute;left:0;top:0;width:100%;height:100%;
+    filter:none;opacity:1;animation:none;pointer-events:none;
+  }
+  #starTwinkle{animation:starblink 7s ease-in-out infinite}
+  @keyframes starblink{0%,100%{opacity:.25}50%{opacity:.9}}
   @keyframes moonalive{0%,100%{opacity:0}50%{opacity:var(--peak)}}
   @keyframes twinkle{0%,100%{opacity:.15}50%{opacity:.85}}
   .menu-toggle{display:none}
@@ -125,7 +131,7 @@
   .meg-photo img{
     width:100%;height:auto;display:block;
     border-radius:var(--radius);
-    border:1px solid var(--card-border);
+    filter:drop-shadow(0 12px 32px rgba(168,85,247,0.25));
   }
   .cta-row{display:flex;gap:16px;align-items:center;flex-wrap:wrap;margin-bottom:40px}
   .proof{margin-top:8px}
@@ -237,6 +243,7 @@
     .reveal{opacity:1;transform:none;transition:none}
     .aura .star{animation:none;opacity:.5}
     .moon-layer canvas{animation:none;opacity:.55}
+    #starTwinkle{animation:none;opacity:.5}
   }
 
   /* ---------- responsive ---------- */
@@ -314,7 +321,7 @@
   <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-label="Open menu"><svg class="ic" aria-hidden="true"><use href="#i-list"/></svg></button>
 </nav>
 
-<div class="moon-layer" aria-hidden="true"></div>
+<div class="moon-layer" aria-hidden="true"><canvas id="starField"></canvas><canvas id="starTwinkle"></canvas></div>
 
 <header class="hero" id="top">
   <div class="aura" aria-hidden="true">
@@ -358,7 +365,7 @@
   <section id="about" class="reveal">
     <div class="wrap about-grid">
       <figure class="meg-photo reveal">
-        <img src="meg.avif" alt="Meghann Misiak — That Sales Witch" width="640" height="960">
+        <img src="meg-cutout.webp" alt="Meghann Misiak — That Sales Witch" width="640" height="960">
       </figure>
       <div class="about-copy">
         <p class="kicker">About Meg</p>
@@ -580,6 +587,41 @@
       moonLayer.appendChild(c);
     });
   };
+  function paintStars(canvasId, count, maxR, alpha) {
+    const c = document.getElementById(canvasId);
+    if (!c) return;
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const w = document.documentElement.clientWidth;
+    const h = document.body.scrollHeight;
+    c.width = w * dpr; c.height = h * dpr;
+    const ctx = c.getContext('2d');
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.clearRect(0, 0, w, h);
+    const colors = ['#f3ecff', '#e9d5ff', '#c4b5fd', '#f0abfc'];
+    for (let i = 0; i < count; i++) {
+      const x = Math.random() * w;
+      const y = Math.random() * h;
+      const r = 0.4 + Math.random() * maxR;
+      const a = alpha * (0.35 + Math.random() * 0.65);
+      ctx.beginPath();
+      ctx.arc(x, y, r, 0, 2 * Math.PI);
+      ctx.fillStyle = colors[Math.floor(Math.random() * colors.length)];
+      ctx.globalAlpha = a;
+      ctx.fill();
+    }
+  }
+  function paintStarfield() {
+    paintStars('starField', 220, 1.6, 0.9);
+    paintStars('starTwinkle', 70, 1.9, 1);
+  }
+  moonImg.addEventListener('load', paintStarfield);
+  if (moonImg.complete) paintStarfield();
+  let starResizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(starResizeTimer);
+    starResizeTimer = setTimeout(paintStarfield, 200);
+  });
+
   moonImg.src = MOON_TEX;
 
   // Scroll reveals: sections rise 32px and fade in once
