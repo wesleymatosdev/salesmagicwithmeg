@@ -13,16 +13,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-<script>
-  // Set theme before first paint to avoid a flash of the wrong mode
-  (function () {
-    try {
-      var t = localStorage.getItem('theme');
-      document.documentElement.dataset.theme = (t === 'light' || t === 'dark') ? t : 'dark';
-    } catch (e) { document.documentElement.dataset.theme = 'dark'; }
-  })();
-</script>
-<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
 <style>
   :root{
     --bg:#12041f;
@@ -39,29 +30,6 @@
     --curve:cubic-bezier(0.22,1,0.36,1);
     --maxw:1120px;
   }
-  html[data-theme="light"]{
-    --bg:#faf7ff;
-    --bg-raised:#f3ecff;
-    --card:#ffffff;
-    --card-border:#e6d8fb;
-    --text:#241040;
-    --muted:#5e4a82;
-    --faint:#907cb8;
-    --accent:#9333ea;
-    --accent-soft:#7c3aed;
-    --blush:#e879f9;
-  }
-  html[data-theme="light"] nav{background:rgba(255,255,255,0.78);border-color:rgba(147,51,234,0.25)}
-  html[data-theme="light"] h1{background:linear-gradient(90deg,#241040,#7c3aed);-webkit-background-clip:text;background-clip:text}
-  html[data-theme="light"] .eyebrow{background:rgba(147,51,234,0.08)}
-  html[data-theme="light"] .card .icon{background:rgba(147,51,234,0.10)}
-  html[data-theme="light"] details summary:hover{background:rgba(147,51,234,0.06)}
-  html[data-theme="light"] .badge{color:#fff}
-  html[data-theme="light"] .aura .c1{opacity:0.30}
-  html[data-theme="light"] .aura .c2{opacity:0.14}
-  html[data-theme="light"] .aura .c3{opacity:0.20}
-  html[data-theme="light"] .aura .c4{opacity:0.12}
-  html[data-theme="light"] .stars{display:none}
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
   body{
@@ -114,25 +82,7 @@
   .menu-toggle .ic{width:26px;height:26px}
   details summary .ic{color:var(--accent-soft);width:18px;height:18px;transition:transform .5s var(--curve)}
   details[open] summary .ic{transform:rotate(45deg)}
-  .theme-toggle{
-    display:flex;align-items:center;justify-content:center;
-    width:36px;height:36px;border-radius:999px;flex:none;
-    background:transparent;border:1px solid var(--card-border);
-    color:var(--accent-soft);cursor:pointer;padding:0;
-    transition:background .3s var(--curve),border-color .6s var(--curve),color .6s var(--curve);
-  }
-  .theme-toggle:hover{background:rgba(168,85,247,0.14)}
-  .theme-toggle:focus-visible{outline:2px solid var(--accent-soft);outline-offset:2px}
-  .theme-toggle .ic{width:20px;height:20px}
-  .theme-toggle svg{transition:transform .6s var(--curve)}
-  .theme-toggle .sun{display:none}
-  html[data-theme="light"] .theme-toggle .sun{display:block}
-  html[data-theme="light"] .theme-toggle .moon{display:none}
-  .theme-toggle.spin svg{animation:spin360 .6s var(--curve)}
-  @keyframes spin360{from{transform:rotate(-180deg) scale(.6);opacity:.4}to{transform:none;opacity:1}}
-  body *{transition-property:background-color,border-color,color;transition-duration:.6s;transition-timing-function:var(--curve)}
-  .aura circle{transition:opacity .6s var(--curve)}
-  .aura .star{animation:twinkle 3.4s ease-in-out infinite;transition:none}
+  .aura .star{animation:twinkle 3.4s ease-in-out infinite}
   @keyframes twinkle{0%,100%{opacity:.15}50%{opacity:.85}}
   .menu-toggle{display:none}
 
@@ -261,11 +211,6 @@
 
   /* booking */
   #book{padding-top:0}
-  .booking-box{
-    background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius);
-    padding:24px;margin-top:48px;
-  }
-  .calendly-inline-widget{min-width:280px;height:720px;border-radius:12px;overflow:hidden}
 
   /* footer */
   footer.site{
@@ -285,9 +230,7 @@
     html{scroll-behavior:auto}
     .reveal{opacity:1;transform:none;transition:none}
     .tagline .w{opacity:1;transition:none}
-    .theme-toggle.spin svg{animation:none}
     .aura .star{animation:none;opacity:.5}
-    .aura circle{transition:none}
   }
 
   /* ---------- responsive ---------- */
@@ -353,13 +296,6 @@
     <symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
       <line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/>
     </symbol>
-    <symbol id="i-moon" viewBox="0 0 24 24" fill="currentColor" stroke="none">
-      <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>
-    </symbol>
-    <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-      <circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/>
-      <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>
-    </symbol>
   </defs>
 </svg>
 
@@ -371,10 +307,6 @@
     <a class="navlink" href="#faq">FAQ</a>
     <a class="btn small" href="#book"><svg class="ic" aria-hidden="true"><use href="#i-calendar"/></svg>Book a consult</a>
   </div>
-  <button class="theme-toggle" id="themeToggle" aria-label="Switch to light mode">
-    <svg class="ic moon" aria-hidden="true"><use href="#i-moon"/></svg>
-    <svg class="ic sun" aria-hidden="true"><use href="#i-sun"/></svg>
-  </button>
   <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-label="Open menu"><svg class="ic" aria-hidden="true"><use href="#i-list"/></svg></button>
 </nav>
 
@@ -400,8 +332,8 @@
   </div>
   <div class="wrap hero-inner">
     <span class="eyebrow">✨ That Sales Witch</span>
-    <h1>Hit quota without<br>losing yourself.</h1>
-    <p class="sub">Elite sales strategy combined with the nervous system and mindset work that removes what is killing your performance at the root. For burned-out, top-performing SaaS sellers and founders.</p>
+    <h1>F*ck hustle<br>culture.</h1>
+    <p class="sub">Let&rsquo;s regulate the humans behind your revenue. Elite sales strategy plus nervous system work for burned-out, top-performing SaaS sellers and founders. More clarity, less chaos, and actual joy.</p>
     <div class="cta-row">
       <a class="btn" href="#book"><svg class="ic" aria-hidden="true"><use href="#i-sparkle"/></svg>Book a free consult</a>
       <a class="btn ghost" href="#offerings">See how we can work together</a>
@@ -430,7 +362,8 @@
     <div class="wrap about-grid">
       <div class="about-copy">
         <p class="kicker">About Meg</p>
-        <h2>Hi, I&rsquo;m Meg 🔮 Sales coach, revenue strategist, energy witch.</h2>
+        <h2>Hi, I&rsquo;m Meg Misiak 🔮</h2>
+        <p style="font-size:18px;line-height:28px;color:var(--accent-soft);font-weight:600;margin-top:8px">Sales Coach · Revenue Strategist · Energy Witch</p>
         <p style="margin-top:24px">After a decade scaling sales orgs, I burned out. Hard. I used to believe success meant staying later, pushing harder, and sacrificing everything for the number on the board. A bigger paycheck and President&rsquo;s Club were supposed to finally make me happy. They didn&rsquo;t.</p>
         <p>So I spent the last five years rethinking everything I knew about success, sales, and the corporate ladder. Now I work with sellers who are doing really well on paper but deeply, existentially exhausted. The ones at the top of the leaderboard wondering why they don&rsquo;t feel proud.</p>
         <p>I&rsquo;ve coached <strong>75+ sellers</strong> from teams at <strong>Deel, Salesforce, HubSpot, and Blend</strong> to hit top performance without the burnout: deal scorecards and qualification frameworks, founders learning to sell their own product without feeling gross about it, and the tools to regulate your nervous system so you close your laptop earlier and still hit #1.</p>
@@ -555,9 +488,10 @@
     <div class="wrap">
       <p class="kicker">Book a consult</p>
       <h2>🔮 Ready when you are</h2>
-      <p class="lede">Pick a time below. The consult is free, no pressure, and genuinely useful even if we never work together.</p>
-      <div class="booking-box">
-        <div class="calendly-inline-widget" data-url="https://calendly.com/megmisiak/sales-coaching-consult?hide_gdpr_banner=1&background_color=22103d&text_color=f3ecff&primary_color=a855f7" style="min-width:280px;height:720px;"></div>
+      <p class="lede">The consult is free, no pressure, and genuinely useful even if we never work together. Pick your time on the booking page.</p>
+      <div class="cta-row" style="margin-top:32px">
+        <a class="btn" href="https://demo.wmatos.dev/meg-calendly/"><svg class="ic" aria-hidden="true"><use href="#i-calendar"/></svg>Open the booking page</a>
+        <a class="btn ghost" href="mailto:meg@salesmagicwithmeg.com">Email Meg instead</a>
       </div>
     </div>
   </section>
@@ -573,49 +507,12 @@
     <div style="display:flex;gap:24px;align-items:center">
       <a href="mailto:meg@salesmagicwithmeg.com">meg@salesmagicwithmeg.com</a>
       <a href="https://www.linkedin.com/in/megmisiak/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.salesmagicwithmeg.com/" target="_blank" rel="noopener">Newsletter: Letters to My Burned Out Self</a>
     </div>
   </div>
 </footer>
 
 <script>
-  // Theme toggle: sun/moon switch, persisted, re-colors the Calendly embed
-  const themeToggle = document.getElementById('themeToggle');
-  function isLight() { return document.documentElement.dataset.theme === 'light'; }
-  function bookingUrl() {
-    const bg = isLight() ? 'ffffff' : '22103d';
-    const tx = isLight() ? '241040' : 'f3ecff';
-    const pr = isLight() ? '9333ea' : 'a855f7';
-    return 'https://calendly.com/megmisiak/sales-coaching-consult?hide_gdpr_banner=1&background_color=' + bg + '&text_color=' + tx + '&primary_color=' + pr;
-  }
-  function syncThemeLabel() {
-    themeToggle.setAttribute('aria-label', isLight() ? 'Switch to dark mode' : 'Switch to light mode');
-  }
-  function refreshBooking() {
-    const w = document.querySelector('.calendly-inline-widget');
-    if (!w) return;
-    w.dataset.url = bookingUrl();
-    if (window.Calendly && window.Calendly.initInlineWidgets) {
-      const fresh = w.cloneNode();
-      fresh.dataset.url = bookingUrl();
-      w.parentNode.replaceChild(fresh, w);
-      window.Calendly.initInlineWidgets();
-    }
-  }
-  themeToggle.addEventListener('click', () => {
-    const next = isLight() ? 'dark' : 'light';
-    document.documentElement.dataset.theme = next;
-    try { localStorage.setItem('theme', next); } catch (e) {}
-    syncThemeLabel();
-    themeToggle.classList.remove('spin');
-    void themeToggle.offsetWidth;
-    themeToggle.classList.add('spin');
-    refreshBooking();
-  });
-  syncThemeLabel();
-  refreshBooking();
-  const calScript = document.querySelector('script[src*="assets.calendly.com"]');
-  if (calScript) calScript.addEventListener('load', refreshBooking);
-
   // Scroll reveals: sections rise 32px and fade in once
   const io = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
