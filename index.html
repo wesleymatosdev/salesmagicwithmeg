@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Meghann Misiak 🔮 That Sales Witch — Sales Coaching Without the Hustle</title>
+<meta name="description" content="Elite sales strategy plus nervous system work for burned-out, top-performing SaaS sellers and founders. Hit quota without losing yourself. Book a free, no-pressure consult.">
+<meta property="og:title" content="Meghann Misiak 🔮 That Sales Witch">
+<meta property="og:description" content="Sales works better when it doesn't cost you everything to do it. 1:1 coaching, Energy Audits, and bootcamps for sellers and teams.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="og-image.png">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+<style>
+  :root{
+    --bg:#12041f;
+    --bg-raised:#1b0831;
+    --card:#22103d;
+    --card-border:#3a1f5e;
+    --text:#f3ecff;
+    --muted:#b9a6d9;
+    --faint:#7e68a6;
+    --accent:#a855f7;
+    --accent-soft:#c4b5fd;
+    --blush:#f0abfc;
+    --radius:16px;
+    --curve:cubic-bezier(0.22,1,0.36,1);
+    --maxw:1120px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Manrope',sans-serif;
+    font-size:16px;line-height:24px;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  ::selection{background:var(--accent);color:#fff}
+
+  .skip-link{position:absolute;left:-9999px;top:0;background:var(--accent);color:#fff;padding:8px 12px;border-radius:8px;z-index:100}
+  .skip-link:focus{left:16px;top:16px}
+
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+
+  /* ---------- nav ---------- */
+  nav{
+    position:fixed;top:16px;left:50%;transform:translateX(-50%);
+    z-index:50;display:flex;align-items:center;gap:32px;
+    background:rgba(27,8,49,0.72);
+    -webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);
+    border:1px solid rgba(168,85,247,0.25);
+    border-radius:999px;
+    padding:12px 20px;
+    width:max-content;
+  }
+  nav .logo{font-size:18px;line-height:28px;font-weight:700;color:var(--text);text-decoration:none;white-space:nowrap}
+  nav .links{display:flex;gap:24px;align-items:center}
+  nav a.navlink{font-size:14px;line-height:20px;font-weight:500;color:var(--muted);text-decoration:none;transition:color .3s var(--curve)}
+  nav a.navlink:hover{color:var(--text)}
+  nav a.navlink[aria-current="true"]{color:var(--accent-soft)}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:16px;line-height:24px;font-weight:600;
+    color:#fff;background:var(--accent);
+    padding:8px 12px;border-radius:12px;
+    text-decoration:none;border:none;cursor:pointer;
+    transition:transform .5s var(--curve),background .3s var(--curve);
+  }
+  .btn:hover{background:#b96bff;transform:translateY(-1px)}
+  .btn:active{transform:translateY(1px) scale(0.98)}
+  .btn:focus-visible{outline:2px solid var(--accent-soft);outline-offset:2px}
+  .btn.ghost{background:transparent;border:1px solid var(--card-border);color:var(--text)}
+  .btn.ghost:hover{background:var(--card);transform:translateY(-1px)}
+  .btn.small{font-size:14px;line-height:20px;font-weight:600}
+  .ic{width:1em;height:1em;display:inline-block;vertical-align:-0.14em;flex:none}
+  .card .icon .ic{width:26px;height:26px}
+  .menu-toggle .ic{width:26px;height:26px}
+  details summary .ic{color:var(--accent-soft);width:18px;height:18px;transition:transform .5s var(--curve)}
+  details[open] summary .ic{transform:rotate(45deg)}
+  .menu-toggle{display:none}
+
+  /* ---------- hero ---------- */
+  header.hero{position:relative;padding:180px 0 96px;text-align:left}
+  .aura{
+    position:absolute;inset:0;overflow:hidden;pointer-events:none;
+  }
+  .aura svg{position:absolute;right:-160px;top:-80px;width:820px;height:820px;opacity:.85}
+  .hero-inner{position:relative;max-width:680px}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:12px;line-height:16px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--accent-soft);
+    background:rgba(168,85,247,0.12);
+    border:1px solid rgba(168,85,247,0.3);
+    border-radius:999px;padding:6px 14px;margin-bottom:24px;
+  }
+  h1{
+    font-size:60px;line-height:60px;font-weight:600;
+    letter-spacing:-0.02em;text-wrap:balance;
+    background:linear-gradient(90deg,#ffffff,#9b9b9b);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    margin-bottom:24px;
+  }
+  .sub{font-size:18px;line-height:28px;font-weight:400;color:var(--muted);max-width:680px;margin-bottom:32px;text-wrap:pretty}
+  .cta-row{display:flex;gap:16px;align-items:center;flex-wrap:wrap;margin-bottom:40px}
+  .proof{margin-top:8px}
+  .proof .label{font-size:12px;line-height:16px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);margin-bottom:12px}
+  .proof .logos{font-size:14px;line-height:20px;font-weight:600;color:var(--muted);display:flex;gap:24px;flex-wrap:wrap}
+  .stats{display:flex;gap:48px;margin-top:40px;flex-wrap:wrap}
+  .stat b{display:block;font-size:30px;line-height:36px;font-weight:600;color:var(--accent-soft)}
+  .stat span{font-size:14px;line-height:20px;color:var(--muted)}
+
+  /* ---------- sections ---------- */
+  section{padding:96px 0}
+  h2{font-size:48px;line-height:48px;font-weight:600;letter-spacing:-0.02em;text-wrap:balance;margin-bottom:16px}
+  h3{font-size:24px;line-height:32px;font-weight:600}
+  .kicker{font-size:14px;line-height:20px;font-weight:600;color:var(--accent-soft);margin-bottom:12px}
+  .lede{font-size:16px;line-height:24px;color:var(--muted);max-width:680px;text-wrap:pretty}
+
+  /* tagline reveal */
+  .tagline{padding:120px 0;text-align:left}
+  .tagline p{
+    font-size:48px;line-height:48px;font-weight:600;letter-spacing:-0.02em;
+    max-width:680px;text-wrap:balance;
+  }
+  .tagline .w{color:var(--text);opacity:.28;transition:opacity .6s var(--curve)}
+  .tagline .w.on{opacity:1}
+
+  /* about */
+  .about-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:start}
+  .about-copy p{color:var(--muted);margin-bottom:16px;text-wrap:pretty}
+  .about-copy p strong{color:var(--text);font-weight:600}
+  .mantra{
+    background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius);
+    padding:32px;
+  }
+  .mantra h3{margin-bottom:12px}
+  .mantra p{color:var(--muted);font-size:14px;line-height:20px}
+  .mantra .big{font-size:24px;line-height:32px;font-weight:600;color:var(--accent-soft);margin-bottom:16px}
+
+  /* offerings */
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+  .card{
+    background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius);
+    padding:32px;display:flex;flex-direction:column;gap:16px;
+    transition:transform .5s var(--curve),border-color .3s var(--curve);
+  }
+  .card:hover{transform:translateY(-4px);border-color:var(--accent)}
+  .card .icon{
+    width:48px;height:48px;border-radius:12px;
+    background:rgba(168,85,247,0.14);
+    display:flex;align-items:center;justify-content:center;
+    font-size:24px;color:var(--accent-soft);
+  }
+  .card p{color:var(--muted);font-size:14px;line-height:20px;flex:1}
+  .badge{
+    align-self:flex-start;
+    font-size:12px;line-height:16px;font-weight:600;
+    color:#160526;background:var(--blush);
+    border-radius:999px;padding:4px 12px;
+  }
+  .badge.dim{color:var(--muted);background:transparent;border:1px solid var(--card-border)}
+
+  /* how it works */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+  .step{position:relative;padding-top:8px}
+  .step .num{
+    font-size:12px;line-height:16px;font-weight:600;letter-spacing:.08em;
+    color:var(--accent-soft);display:block;margin-bottom:12px;
+  }
+  .step h3{margin-bottom:8px;font-size:20px;line-height:28px}
+  .step p{color:var(--muted);font-size:14px;line-height:20px;text-wrap:pretty}
+
+  /* testimonial */
+  blockquote{
+    background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius);
+    padding:40px;max-width:760px;margin:48px auto 0;
+  }
+  blockquote p{font-size:24px;line-height:32px;font-weight:500;text-wrap:pretty;margin-bottom:24px}
+  blockquote footer{display:flex;align-items:center;gap:12px}
+  .avatar{
+    width:40px;height:40px;border-radius:999px;background:var(--accent);
+    color:#fff;font-size:14px;font-weight:600;
+    display:flex;align-items:center;justify-content:center;flex:none;
+  }
+  blockquote cite{font-style:normal;font-size:14px;line-height:20px;color:var(--muted)}
+  blockquote cite b{color:var(--text);font-weight:600;display:block}
+
+  /* faq */
+  .faq{max-width:760px;margin:48px auto 0}
+  details{
+    background:var(--card);border:1px solid var(--card-border);border-radius:12px;
+    margin-bottom:12px;overflow:hidden;
+  }
+  details summary{
+    cursor:pointer;list-style:none;
+    display:flex;justify-content:space-between;align-items:center;gap:16px;
+    padding:16px 24px;font-size:16px;line-height:24px;font-weight:600;
+    transition:background .3s var(--curve);
+  }
+  details summary::-webkit-details-marker{display:none}
+  details summary:hover{background:rgba(168,85,247,0.08)}
+  details .a{padding:0 24px 16px;color:var(--muted);font-size:14px;line-height:20px;text-wrap:pretty}
+
+  /* booking */
+  #book{padding-top:0}
+  .booking-box{
+    background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius);
+    padding:24px;margin-top:48px;
+  }
+  .calendly-inline-widget{min-width:280px;height:720px;border-radius:12px;overflow:hidden}
+
+  /* footer */
+  footer.site{
+    border-top:1px solid var(--card-border);
+    padding:48px 0;margin-top:48px;
+  }
+  .foot{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+  .foot .brand{font-size:16px;line-height:24px;font-weight:600}
+  .foot a{color:var(--muted);text-decoration:none;font-size:14px;line-height:20px;font-weight:500;transition:color .3s var(--curve)}
+  .foot a:hover{color:var(--text)}
+  .foot .meta{font-size:12px;line-height:16px;color:var(--faint)}
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(32px);transition:opacity .8s var(--curve),transform .8s var(--curve)}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .reveal{opacity:1;transform:none;transition:none}
+    .tagline .w{opacity:1;transition:none}
+  }
+
+  /* ---------- responsive ---------- */
+  @media (max-width:900px){
+    h1{font-size:48px;line-height:48px}
+    h2{font-size:36px;line-height:40px}
+    .tagline p{font-size:36px;line-height:40px}
+    .cards,.steps,.about-grid{grid-template-columns:1fr}
+    .aura svg{width:560px;height:560px;right:-220px}
+  }
+  @media (max-width:520px){
+    section{padding:64px 0}
+    header.hero{padding:140px 0 64px}
+    h1{font-size:36px;line-height:40px}
+    h2{font-size:30px;line-height:36px}
+    .tagline p{font-size:30px;line-height:36px}
+    nav{gap:0;padding:10px 14px;min-width:calc(100% - 32px);justify-content:space-between}
+    nav .links{display:none}
+    nav.open .links{
+      display:flex;position:fixed;inset:0;
+      flex-direction:column;justify-content:center;align-items:center;gap:32px;
+      background:rgba(18,4,31,0.95);
+      -webkit-backdrop-filter:blur(24px);backdrop-filter:blur(24px);
+    }
+    nav.open .links a{font-size:24px;line-height:32px}
+    .menu-toggle{
+      display:flex;background:none;border:none;color:var(--text);
+      font-size:24px;cursor:pointer;padding:4px;
+    }
+    .stats{gap:24px}
+    .cta-row .btn{width:100%;justify-content:center}
+    .booking-box{padding:12px}
+  }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="4" width="18" height="18" rx="3"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+    </symbol>
+    <symbol id="i-sparkle" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+      <path d="M12 2c.6 4.8 2.2 6.4 7 7-4.8.6-6.4 2.2-7 7-.6-4.8-2.2-6.4-7-7 4.8-.6 6.4-2.2 7-7z"/>
+      <path d="M19 15c.3 2.4 1.1 3.2 3.5 3.5-2.4.3-3.2 1.1-3.5 3.5-.3-2.4-1.1-3.2-3.5-3.5 2.4-.3 3.2-1.1 3.5-3.5z" opacity=".7"/>
+    </symbol>
+    <symbol id="i-ball" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <circle cx="12" cy="10" r="7"/><path d="M5 21h14"/><path d="M9 21c0-2 .8-3.2 3-4 2.2.8 3 2 3 4"/>
+    </symbol>
+    <symbol id="i-camera" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 8h3l2-3h6l2 3h3a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="14" r="4"/>
+    </symbol>
+    <symbol id="i-wand" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M4 20 15 9"/><path d="M15 3v4M13 5h4"/><path d="M19 9v3M17.5 10.5h3"/><path d="M9 3v2M8 4h2"/>
+    </symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+    </symbol>
+    <symbol id="i-list" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/>
+    </symbol>
+    <symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/>
+    </symbol>
+  </defs>
+</svg>
+
+<nav id="nav" aria-label="Main">
+  <a class="logo" href="#top">🔮 Meg Misiak</a>
+  <div class="links">
+    <a class="navlink" href="#about">About</a>
+    <a class="navlink" href="#offerings">Offerings</a>
+    <a class="navlink" href="#faq">FAQ</a>
+    <a class="btn small" href="#book"><svg class="ic" aria-hidden="true"><use href="#i-calendar"/></svg>Book a consult</a>
+  </div>
+  <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-label="Open menu"><svg class="ic" aria-hidden="true"><use href="#i-list"/></svg></button>
+</nav>
+
+<header class="hero" id="top">
+  <div class="aura" aria-hidden="true">
+    <svg viewBox="0 0 800 800">
+      <defs><filter id="blur" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="60"/></filter></defs>
+      <g filter="url(#blur)">
+        <circle cx="520" cy="240" r="230" fill="#7c3aed" opacity="0.45"/>
+        <circle cx="330" cy="420" r="180" fill="#c026d3" opacity="0.28"/>
+        <circle cx="600" cy="520" r="150" fill="#a855f7" opacity="0.35"/>
+        <circle cx="420" cy="330" r="110" fill="#f0abfc" opacity="0.18"/>
+      </g>
+    </svg>
+  </div>
+  <div class="wrap hero-inner">
+    <span class="eyebrow">✨ That Sales Witch</span>
+    <h1>Hit quota without<br>losing yourself.</h1>
+    <p class="sub">Elite sales strategy combined with the nervous system and mindset work that removes what is killing your performance at the root. For burned-out, top-performing SaaS sellers and founders.</p>
+    <div class="cta-row">
+      <a class="btn" href="#book"><svg class="ic" aria-hidden="true"><use href="#i-sparkle"/></svg>Book a free consult</a>
+      <a class="btn ghost" href="#offerings">See how we can work together</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>75+</b><span>sellers coached</span></div>
+      <div class="stat"><b>15+</b><span>years in sales</span></div>
+      <div class="stat"><b>3</b><span>1:1 slots open now</span></div>
+    </div>
+    <div class="proof">
+      <p class="label">Trusted by sellers and teams at</p>
+      <div class="logos"><span>Deel</span><span>HubSpot</span><span>Salesforce</span><span>Blend</span><span>Movable Ink</span></div>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="tagline reveal" aria-label="Philosophy">
+    <div class="wrap">
+      <p id="taglineText">Sales works better when it doesn&rsquo;t cost you everything to do it.</p>
+    </div>
+  </section>
+
+  <section id="about" class="reveal">
+    <div class="wrap about-grid">
+      <div class="about-copy">
+        <p class="kicker">About Meg</p>
+        <h2>Hi, I&rsquo;m Meg 🔮 Sales coach, revenue strategist, energy witch.</h2>
+        <p style="margin-top:24px">After a decade scaling sales orgs, I burned out. Hard. I used to believe success meant staying later, pushing harder, and sacrificing everything for the number on the board. A bigger paycheck and President&rsquo;s Club were supposed to finally make me happy. They didn&rsquo;t.</p>
+        <p>So I spent the last five years rethinking everything I knew about success, sales, and the corporate ladder. Now I work with sellers who are doing really well on paper but deeply, existentially exhausted. The ones at the top of the leaderboard wondering why they don&rsquo;t feel proud.</p>
+        <p>I&rsquo;ve coached <strong>75+ sellers</strong> from teams at <strong>Deel, Salesforce, HubSpot, and Blend</strong> to hit top performance without the burnout: deal scorecards and qualification frameworks, founders learning to sell their own product without feeling gross about it, and the tools to regulate your nervous system so you close your laptop earlier and still hit #1.</p>
+        <p><strong>Effortless Abundance</strong> is the sweet spot where strategy meets nervous system regulation. Results feel sustainable. Success stops costing you your wellbeing.</p>
+      </div>
+      <aside class="mantra">
+        <h3>The through-line</h3>
+        <p class="big">You can win more with less effort.</p>
+        <p>Tactical, client-centric sales strategies that make selling effective and fulfilling. A mantra of effort-LESS abundance. And the tools to get your life, hobbies, and stress back under control.</p>
+        <p style="margin-top:16px">My clients hit #1 on their team, get promotions, and become legends at their company. They also write books, speak on stages, and launch the creative projects they didn&rsquo;t think they had space for.</p>
+      </aside>
+    </div>
+  </section>
+
+  <section id="offerings" class="reveal">
+    <div class="wrap">
+      <p class="kicker">Offerings</p>
+      <h2>How we can work together</h2>
+      <p class="lede">Sales success is about your presence, not just your pipeline. Pick the format that fits where you and your team are right now.</p>
+      <div class="cards">
+        <article class="card">
+          <div class="icon"><svg class="ic" aria-hidden="true"><use href="#i-ball"/></svg></div>
+          <span class="badge">3 slots available</span>
+          <h3>1:1 Sales Coaching</h3>
+          <p>High-impact coaching for high-performing SaaS sellers who want to win with way less stress. Deal strategy, quota attainment, and the mindset work underneath it.</p>
+          <a class="btn ghost" href="#book">Book a consult</a>
+        </article>
+        <article class="card">
+          <div class="icon"><svg class="ic" aria-hidden="true"><use href="#i-camera"/></svg></div>
+          <span class="badge">For teams</span>
+          <h3>The Energy Audit</h3>
+          <p>Turn your team&rsquo;s biometric data into a visually striking representation of their energy. Perfect for sales kickoffs, offsites, and holiday events.</p>
+          <a class="btn ghost" href="mailto:meg@salesmagicwithmeg.com?subject=Energy%20Audit%20inquiry">Ask about it</a>
+        </article>
+        <article class="card">
+          <div class="icon"><svg class="ic" aria-hidden="true"><use href="#i-wand"/></svg></div>
+          <span class="badge dim">Next bootcamp: TBD</span>
+          <h3>Sales Bootcamp</h3>
+          <p>A four-week immersive experience for teams and sellers who are ready to win big and sell with soul.</p>
+          <a class="btn ghost" href="mailto:meg@salesmagicwithmeg.com?subject=Bootcamp%20waitlist">Join the waitlist</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="how" class="reveal">
+    <div class="wrap">
+      <p class="kicker">How it works</p>
+      <h2>From burned out to booked out</h2>
+      <div class="steps">
+        <div class="step">
+          <span class="num">STEP 01</span>
+          <h3>Book a no-pressure consult</h3>
+          <p>A free conversation to explore whether this is the right fit. No pitch, no pressure.</p>
+        </div>
+        <div class="step">
+          <span class="num">STEP 02</span>
+          <h3>We dig in</h3>
+          <p>Your goals, personal and professional. Your challenges, known issues and blind spots. The support you actually need right now.</p>
+        </div>
+        <div class="step">
+          <span class="num">STEP 03</span>
+          <h3>Strategy plus regulation</h3>
+          <p>A plan that pairs elite sales strategy with the nervous system work that removes the root-cause blocks killing your performance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="proof" class="reveal">
+    <div class="wrap">
+      <p class="kicker">What clients say</p>
+      <h2>Sales therapy, in the best way</h2>
+      <blockquote>
+        <p>&ldquo;Meg&rsquo;s strength lies in how she blends strategy with humanness. Working with her feels like sales therapy. She gives tough love, challenges in the right ways, and always has an answer that pushes things forward.&rdquo;</p>
+        <footer>
+          <span class="avatar" aria-hidden="true">NS</span>
+          <cite><b>Neha Singh</b>Account Executive at Deel</cite>
+        </footer>
+      </blockquote>
+    </div>
+  </section>
+
+  <section id="faq" class="reveal">
+    <div class="wrap">
+      <p class="kicker">FAQ</p>
+      <h2>Questions, answered</h2>
+      <div class="faq">
+        <details>
+          <summary>Who do you work with? <svg class="ic" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+          <p class="a">Burned-out, top-performing SaaS sellers and founders who are doing well on paper but existentially exhausted. Also sales teams, through bootcamps, training, and Energy Audits.</p>
+        </details>
+        <details>
+          <summary>Is this actual sales strategy or just mindset woo? <svg class="ic" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+          <p class="a">Both, on purpose. You get deal scorecards, qualification frameworks, discovery through negotiation, and pipeline reviews, combined with the nervous system and mindset work that removes the root-cause blocks killing your performance. The strategy makes you effective. The regulation makes it sustainable.</p>
+        </details>
+        <details>
+          <summary>What happens in the free consult? <svg class="ic" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+          <p class="a">We dig into your goals (personal and professional, short and long term), your challenges (known issues, potential blind spots, anything holding you back), and the support you need right now and in what format. You leave with clarity either way, and there is zero pressure to buy.</p>
+        </details>
+        <details>
+          <summary>Do you work with teams and companies? <svg class="ic" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+          <p class="a">Yes. Consulting and training for teams, The Energy Audit for kickoffs and offsites, and four-week bootcamps. For team inquiries, email meg@salesmagicwithmeg.com or mention it in your consult booking.</p>
+        </details>
+        <details>
+          <summary>Where are you based? Do you work remotely? <svg class="ic" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+          <p class="a">I&rsquo;m based in Mexico City and coach sellers and founders around the world. Sessions run over video, and Energy Audits travel for on-site events.</p>
+        </details>
+        <details>
+          <summary>How much does coaching cost? <svg class="ic" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+          <p class="a">Pricing depends on the format and what you need, and it&rsquo;s shared openly on the consult. Booking the consult itself is free.</p>
+        </details>
+        <details>
+          <summary>Can we partner on content or brand deals? <svg class="ic" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+          <p class="a">I&rsquo;m open to brand partnerships. Reach out at meg@salesmagicwithmeg.com with what you have in mind.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section id="book" class="reveal">
+    <div class="wrap">
+      <p class="kicker">Book a consult</p>
+      <h2>🔮 Ready when you are</h2>
+      <p class="lede">Pick a time below. The consult is free, no pressure, and genuinely useful even if we never work together.</p>
+      <div class="booking-box">
+        <div class="calendly-inline-widget" data-url="https://calendly.com/megmisiak/sales-coaching-consult?hide_gdpr_banner=1&background_color=22103d&text_color=f3ecff&primary_color=a855f7" style="min-width:280px;height:720px;"></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap foot">
+    <div>
+      <div class="brand">🔮 Meghann Misiak</div>
+      <div class="meta">That Sales Witch · Mexico City · Raising the vibration of sales</div>
+    </div>
+    <div style="display:flex;gap:24px;align-items:center">
+      <a href="mailto:meg@salesmagicwithmeg.com">meg@salesmagicwithmeg.com</a>
+      <a href="https://www.linkedin.com/in/megmisiak/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveals: sections rise 32px and fade in once
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Tagline reveal: words activate one at a time on scroll
+  const tp = document.getElementById('taglineText');
+  tp.innerHTML = tp.textContent.trim().split(/\s+/).map(w => `<span class="w">${w}</span>`).join(' ');
+  const words = tp.querySelectorAll('.w');
+  const tio = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      tio.unobserve(tp);
+      const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      words.forEach((w, i) => {
+        if (reduced) { w.classList.add('on'); } else { setTimeout(() => w.classList.add('on'), i * 110); }
+      });
+    });
+  }, { threshold: 0.6 });
+  tio.observe(tp);
+
+  // Mobile menu: full height panel, staggered link entrance
+  const nav = document.getElementById('nav');
+  const toggle = document.getElementById('menuToggle');
+  toggle.addEventListener('click', () => {
+    const open = nav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open);
+    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    toggle.innerHTML = open ? "<svg class=\"ic\" aria-hidden=\"true\"><use href=\"#i-x\"/></svg>" : "<svg class=\"ic\" aria-hidden=\"true\"><use href=\"#i-list\"/></svg>";
+    if (open) {
+      nav.querySelectorAll('.links a').forEach((a, i) => {
+        a.style.opacity = 0;
+        a.style.transform = 'translateY(24px)';
+        a.style.transition = 'none';
+        setTimeout(() => {
+          a.style.transition = 'opacity .5s cubic-bezier(0.22,1,0.36,1), transform .5s cubic-bezier(0.22,1,0.36,1)';
+          a.style.opacity = 1;
+          a.style.transform = 'none';
+        }, Math.min(i * 60, 400));
+      });
+    }
+  });
+  nav.querySelectorAll('.links a').forEach(a => a.addEventListener('click', () => {
+    if (nav.classList.contains('open')) toggle.click();
+  }));
+
+  // Mark current section in nav
+  const sections = ['about', 'offerings', 'faq'].map(id => document.getElementById(id));
+  const nio = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      document.querySelectorAll('nav .navlink').forEach(a =>
+        a.setAttribute('aria-current', a.getAttribute('href') === '#' + e.target.id ? 'true' : 'false'));
+    });
+  }, { rootMargin: '-40% 0px -50% 0px' });
+  sections.forEach(s => s && nio.observe(s));
+</script>
+</body>
+</html>
